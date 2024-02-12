@@ -1,0 +1,220 @@
+<!DOCTYPE html><!-- program that prints the numbers from 1 t0 100. For multiples of 3, print " Fizz";for multiples of 5 ,print "Buzz"; and for numbers that are multiples of both ,print "FizzBuzz" -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FizzBuzz</title>
+</head>
+<body>
+    <h1>FizzBuzz</h1>
+    <div id ="output"></div>
+    <script>
+     Fuction fizzBuzz() {
+let output="";
+for (let i =1;i<= 100;i ++){
+    if (i% 3===0&& i%5===o){
+        output +="FizzBuzz";
+    } else if (i %3===0){
+        output +="Fizz";
+    } else if (i % 5 ===0){
+        output +="Buzz";
+    }else {
+        output+=i;
+    } output += "<br>";
+} return output
+        }
+        document.getElementById("output").innerHTML = fizzBuzz ();
+        
+    </script>
+</body>
+</html>
+<!-- program to generate fibonacci sequence up to 100-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci sequence</title>
+    <style>
+        table {
+            border-collapse : collapse;
+            width:100%;
+        } th,td {
+            border :1px solid black;
+            padding:8px;
+            text-align: center;
+        }
+        th {
+            background-color:5f2f2f2;
+        }
+        
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>N</th>
+                <th>Fib(N)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>1</td>
+            </tr>
+            <-- javascript will fill the table with fibonacci sequence 
+        </tbody>
+    </table>
+    <script>
+        // fuction to generate a fobonacci sequence up to a given limit
+        fuction generatefibonaccisequence(limit){
+            let fibsequence =[1,1];
+            let i = 2;
+            while ( true ){
+                let nextfib =fibsequence[i -1] + fibsequence [i - 2];
+                if ( nextfib > limit)break;
+                fibsequence. push (nextfib);
+                i++;
+            }
+            return fibsequence;
+        }
+        // fuction to display a fibonacci sequence in HTML table
+        function displayfibonaccisequence(){
+            const limit =100;
+            const fibsequence = generatefibonaccisequence(limit);
+            const tbody = document ,queryselector ('tbody');
+            for (let i =2; i < fibsequence.length; i ++){
+                const newRow = document. createElement('tr');
+                newRow.innerHTML ='
+                < td >$ { i = 1}< / td >
+                < td> ${ fibsequence[i]}< / td >';
+                tbody . appendChild(newRow);
+            } 
+        }
+        // call the fuction to display fibonacci sequence 
+        displayfibonaccisequence();
+    </script>
+</body>
+</html>
+<!---a program that takes an integer as an inpt and returns true if the input is a power of two. example : 8 => returns true, 6 =>returns false-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>power of two checker</title>
+    <script>
+        fuction isPowerOfTwo(number){
+            if (number <= 0){
+                return false;
+            }
+            return (number & (number - 1)) ===0;
+         }
+         fuction checkPowerOfTwo(){
+            var userInput = parseInt(document.getElementNyId("userInput").value)
+            var output = document.getElementById("result"); 
+        output.innerHTML= isPowerOfTwo(userInput) ? "True": : "False"}
+            </script>
+</head>
+<body>
+    <hi> Power of two checker</hi>
+    <input type ="number" id ="userInput" placeholder="Enter an integer>"
+    <button onclick=" checkPowerOfTwo( )">check</button>
+    < p id="result"></p>
+    
+</body>
+</html>
+<!--a program that accepts a string as input , capitalizes the first letter of each word in the string ,and then return the result string-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>capitalizes Words</title>
+    <script>
+        function capitalizeWords(inpt) {
+            reurn input.replace(/\b\w\g, fuction (char){
+                return char. toUpperCase();
+            });
+            
+        }
+        fuction capitalizeAndDisply(){
+            var userInput = document.getElementById("userInput").value;
+            var output = document. getElementById("result");
+            output.innerHTML = capitalizeWords(userInput);
+        }
+        </script>
+</head>
+<body>
+    <h1> Capitalize Words</h1>
+    <textarea id = "userInput"placeholder=" Enter a string"></textarea>
+    <button onclick=" capitalizeAndDisplay()">Capitalize</button>
+    < p id ="result"></p>
+</body>
+</html>
+<!-- a program that takes an integer as input and returns an integer with reversed digit ordering-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= device-width, initial-scale=1.0">
+    <title>Reverse Integer</title>
+    <script>
+        function reverseInteger(number) {
+            const reversed = parseInt(number.toString().split (' ').reverse ().join(' '));
+            return math.sign(number)* reversed;
+        }
+        fuctionreverseAndDisplay( ){
+            const userInput = parseInt(document.getElementById("userInput").value);
+            const outout = document.getElementById("result");
+            outout.innerHTML = reverseInteger(userInput)
+        }
+        
+        </script>
+</head>
+<body>
+    <h1>Reverse Integer</h1>
+    <input type="number" id ="userInput" placeholder="Enter an integer">
+    <button onclick="reverseAndDisplay ()">Reverse</button>
+    < p id = "result"></p>
+</body>
+</html>
+<!--- a program that counts the number of vowels in a sentence-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>count Vowels </title>
+    <script>
+        fuction countVowels(sentence){
+            const vowels = 'aeiouAEIOU';
+            let count = 0;
+            for (let i = 0; i< sentence.length;i++){
+                if (vowels.includes(sentence[i])){
+                    count++;
+                }
+            }
+            return count ;
+
+        }
+        fuction countAndDisplay(){
+            const userInput = document.getElementById("userInput").value;
+            const outout = document.getElementById("result");
+            outout.innerHTML ="Number of vowels :" + countVowels(userInput);
+        }
+        </script>
+</head>
+<body>
+    <h1>count Vowels</h1>
+<textarea id ="userInput" placeholder="Enter a sentence"></textarea>
+<button onclick="countAndDisplay()">countVowels</button>
+<p id ="result"></p>
+    
+</body>
+</html>
